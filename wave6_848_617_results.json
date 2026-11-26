@@ -1,0 +1,42 @@
+{
+  "erdos848_N2500": {
+    "counterexamples": [],
+    "non_mod25_ties": [
+      [
+        58,
+        [
+          32,
+          43,
+          57
+        ]
+      ],
+      [
+        69,
+        [
+          32,
+          43,
+          57
+        ]
+      ],
+      [
+        71,
+        [
+          32,
+          43,
+          57
+        ]
+      ]
+    ]
+  },
+  "erdos617_r5_K26": {
+    "min_bad_6sets_out_of_1151150": 1009,
+    "per_color": [
+      251,
+      307,
+      175,
+      276,
+      0
+    ],
+    "counterexample_found": false
+  }
+}

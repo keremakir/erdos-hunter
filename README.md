@@ -16,7 +16,9 @@ Automated mathematical research pipeline combining **Razborov Flag Algebras (SDP
 | **Erdős #64** *($2^k$-Cycle Free)* | \$1,000 | 8-core 64-bit bitmask SA v2 (147,172 steps) hit $C_4=0, C_8=0$ across $n \in \{30, 36, 42, 48\}$ cubic graphs ($C_{16} \ge 10$ barrier). | Experimental / Calibrated | [pilot_erdos64.py](pilot_erdos64.py), [erdos64_hunter_v2.py](erdos64_hunter_v2.py) |
 | **Erdős #7** *(Odd Covering System)* | \$25 | Exact HiGHS MILP proved `M=315` impossible (`241/315`); prime-power odd universes `M in {945, 1575, 3465}` ($\sum 1/d > 1$) capped at 74%–80% coverage. | Exact MILP (`M=315`) + Bounded | [erdos7_odd_covering.py](erdos7_odd_covering.py), [erdos7_odd_covering_results.json](erdos7_odd_covering_results.json) |
 | **Erdős #1052** *(Unitary Perfect Numbers)* | \$10 | Exact 2-adic budget + factor-propagation branch-and-bound rediscovered `6, 60, 90, 87360` and ruled out new solutions for $2^1 \dots 2^{16}$ (`max_odd_exp=4`). | Exact Branch-and-Bound | [erdos1052_unitary_perfect.py](erdos1052_unitary_perfect.py) |
+| **Erdős #848** *(Non-Squarefree $ab+1$ Sets)* | — | **Universal zero-`sorry` Lean 4.36.0 proof for ALL $0 \le N \le 307$** (all $2^{307}$ subsets) via dual $K$-coloring clique-cover certificates; exact MILP $K$-colorings verified up to $N \le 1007$ ($40/40$ endpoints with $\chi = \omega = |A_7(N)|$) and exact Bron–Kerbosch max-clique verified up to $N \le 2500$; discovered mixed extremal tie $\{32, 43, 57\}$ breaking Sawhney's asymptotic $\bmod 25$ purity for $58 \le N \le 82$. | **Universal Zero-`sorry` Lean 4 Kernel Proof ($N \le 307$)** + Exact MILP/Clique ($N \le 2500$) | [lean_proofs/Erdos848Proofs.lean](lean_proofs/Erdos848Proofs.lean), [erdos848_prefix_cert.py](erdos848_prefix_cert.py), [wave6_848_617_hunter.py](wave6_848_617_hunter.py) |
 | **Erdős #742** *(Murty–Simon Conjecture)* | — | 5,730 exact diameter-2-critical minimalizations at smallest open $n \in \{25, 27, 28\}$: non-bipartite max edges stayed 21–35 below $\lfloor n^2/4 \rfloor$. | Experimental / Negative | [erdos742_murty_simon.py](erdos742_murty_simon.py), [erdos742_results.json](erdos742_results.json) |
+| **Erdős #617** *(Balanced Colorings of $K_{r^2+1}$, $r=5$)* | — | Initialized from $AG(2,5)$ parallel classes + 26th apex vertex on $K_{26}$: reduced color-missing 6-subsets to $1,009$ out of $5 \times \binom{26}{6} = 1,151,150$ ($0.088\%$), supporting Erdős–Gyárfás at $r=5$. | Experimental / Supporting | [wave6_848_617_hunter.py](wave6_848_617_hunter.py), [wave6_848_617_results.json](wave6_848_617_results.json) |
 
 ---
 
@@ -29,6 +31,7 @@ Both [lean_proofs/Erdos835Proofs.lean](lean_proofs/Erdos835Proofs.lean) and [lea
 ```bash
 ~/.elan/bin/lean lean_proofs/Erdos835Proofs.lean
 ~/.elan/bin/lean lean_proofs/Erdos552Proofs.lean
+~/.elan/bin/lean lean_proofs/Erdos848Proofs.lean
 ```
 
 ### 2. Python Zero-Import Independent Audit
