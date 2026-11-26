@@ -1,0 +1,10 @@
+# Secrets & Environment
+.env
+*.env
+
+# Local caches & temporary files
+__pycache__/
+*.pyc
+*.npz
+.gravitycourt/
+tmp_*.json

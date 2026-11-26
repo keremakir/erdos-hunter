@@ -1,0 +1,23 @@
+{
+  "problem": "628",
+  "note": "falsifiable (0 claims) | Erdos-Lovasz Tihany Conjecture first open case (k=6, a=3, b=4)",
+  "round1_exec": {
+    "gpt54": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "deepseek_r1": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "qwen38_max": {
+      "ran": false,
+      "reason": "no_python_block"
+    }
+  },
+  "referee_exec": {
+    "ran": false,
+    "reason": "no_python_block"
+  },
+  "referee_verdict_preview": "[API_ERROR] {\"message\": \"This request requires more credits, or fewer max_tokens. You requested up to 4800 tokens, but can only afford 1999. To increase, visit https://openrouter.ai/workspaces/default/keys/0cb3f87345f80e2f2821d45bea9022c4afc66fdd70f74c2b8fc8d61ac69a30a7 and adjust the key's total limit\", \"code\": 402, \"metadata\": {\"limit_source\": \"openrouter_credits\", \"remedy_hint\": \"Add credits at https://ope"
+}

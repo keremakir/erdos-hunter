@@ -1,0 +1,123 @@
+{
+  "calibration_12": {
+    "M": 12,
+    "num_divisors": 5,
+    "recip_sum": 1.33333,
+    "covered": 12,
+    "uncovered": 0,
+    "coverage_pct": 100.0,
+    "exact_global_opt": true,
+    "status": 0,
+    "time_s": 0.02,
+    "is_full_cover": true,
+    "chosen_sample": {
+      "2": 0,
+      "3": 2,
+      "4": 3,
+      "6": 3,
+      "12": 1
+    }
+  },
+  "odd_universes": [
+    {
+      "M": 315,
+      "num_divisors": 11,
+      "recip_sum": 0.98095,
+      "covered": 241,
+      "uncovered": 74,
+      "coverage_pct": 76.508,
+      "exact_global_opt": true,
+      "status": 0,
+      "time_s": 6.502,
+      "is_full_cover": false,
+      "chosen_sample": {
+        "3": 0,
+        "5": 1,
+        "7": 6,
+        "9": 7,
+        "15": 5,
+        "21": 11,
+        "35": 29,
+        "45": 37,
+        "63": 31,
+        "105": 17
+      },
+      "factorization": "3^2*5*7"
+    },
+    {
+      "M": 945,
+      "num_divisors": 15,
+      "recip_sum": 1.03175,
+      "covered": 754,
+      "uncovered": 191,
+      "coverage_pct": 79.788,
+      "exact_global_opt": false,
+      "status": 1,
+      "time_s": 15.02,
+      "is_full_cover": false,
+      "chosen_sample": {
+        "3": 0,
+        "5": 4,
+        "7": 5,
+        "9": 5,
+        "15": 13,
+        "21": 10,
+        "27": 8,
+        "35": 16,
+        "45": 7,
+        "63": 56
+      },
+      "factorization": "3^3*5*7"
+    },
+    {
+      "M": 1575,
+      "num_divisors": 17,
+      "recip_sum": 1.04698,
+      "covered": 1170,
+      "uncovered": 405,
+      "coverage_pct": 74.286,
+      "exact_global_opt": false,
+      "status": 1,
+      "time_s": 20.045,
+      "is_full_cover": false,
+      "chosen_sample": {
+        "3": 0,
+        "5": 2,
+        "7": 6,
+        "9": 2,
+        "15": 14,
+        "21": 14,
+        "25": 6,
+        "35": 7,
+        "45": 4,
+        "63": 8
+      },
+      "factorization": "3^2*5^2*7"
+    },
+    {
+      "M": 3465,
+      "num_divisors": 23,
+      "recip_sum": 1.16104,
+      "covered": 2749,
+      "uncovered": 716,
+      "coverage_pct": 79.336,
+      "exact_global_opt": false,
+      "status": 1,
+      "time_s": 20.071,
+      "is_full_cover": false,
+      "chosen_sample": {
+        "3": 0,
+        "5": 3,
+        "7": 3,
+        "9": 4,
+        "11": 0,
+        "15": 10,
+        "21": 8,
+        "33": 10,
+        "35": 32,
+        "45": 16
+      },
+      "factorization": "3^2*5*7*11"
+    }
+  ]
+}

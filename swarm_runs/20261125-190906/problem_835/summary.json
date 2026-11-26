@@ -1,0 +1,23 @@
+{
+  "problem": "835",
+  "note": "verifiable | Johnson graph chromatic number J(2k,k)=k+1, k=10 next open frontier!",
+  "round1_exec": {
+    "deepseek_v32": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "nemotron_550b": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "gemma4_31b": {
+      "ran": false,
+      "reason": "no_python_block"
+    }
+  },
+  "referee_exec": {
+    "ran": false,
+    "reason": "no_python_block"
+  },
+  "referee_verdict_preview": "## Audit verdict\n\nAll three computational attacks failed to produce usable computational evidence:\n\n- **DeepSeek:** `Exit Code: None`, no stdout, no stderr.\n- **Nemotron:** `Exit Code: None`, no stdout, no stderr.\n- **Gemma:** API failure.\n\nThus they proved or discovered **nothing computationally**. In particular, their repeated claim that \\(k=10\\) is the “smallest open case” was not verified—and is in fact falsified by the Johnson-bound calculation below.\n\n### Main mathematical error\n\nBoth substantive agents misidentified \\(k=10\\) as an open frontier. Applying the exact `johnsonBound` from the Lean file gives\n\n\\[\n\\operatorname{johnsonBound}(20,4,10)=15920.\n\\]\n\nSince\n\n\\[\n\\binom{20}{10}=184756,\n\\qquad\n\\left\\lceil\\frac{184756}{15920}\\right\\rceil=12,\n\\]\n\nthe formal lower-bound lemma implies\n\n\\[\n\\chi(J(20,10))\\ge 12>11=k+1.\n\\]\n\nTherefore `Property 10` is false. No coloring search is needed for \\(k=10\\).\n\nFor comparison, \\(k=12\\) gives\n\n\\[\n\\operatorname{johnsonBound}(24,4,12)=208012,\n\\]\n\nand\n\n\\[\n\\binom{24}{12}=2704156=13\\cdot208012,\n\\]\n\nso the Johnson bound gives only\n\n\\[\n\\chi(J(24,12"
+}

@@ -1,0 +1,160 @@
+{
+  "max_usd": 1.0,
+  "total_spent_usd": 0.05324,
+  "calls": [
+    {
+      "ts": 1795623019.89,
+      "problem": "128",
+      "phase": "R1-nemotron_550b",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "in_tokens": 744,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.0,
+      "elapsed_sec": 73.09
+    },
+    {
+      "ts": 1795623042.99,
+      "problem": "835",
+      "phase": "R1-nemotron_550b",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "in_tokens": 2802,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.0,
+      "elapsed_sec": 96.19
+    },
+    {
+      "ts": 1795623086.33,
+      "problem": "835",
+      "phase": "R1-deepseek_v32",
+      "model": "deepseek/deepseek-v3.2",
+      "in_tokens": 2802,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.0,
+      "elapsed_sec": 19.46
+    },
+    {
+      "ts": 1795623087.3,
+      "problem": "128",
+      "phase": "R1-deepseek_v32",
+      "model": "deepseek/deepseek-v3.2",
+      "in_tokens": 744,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.0,
+      "elapsed_sec": 20.44
+    },
+    {
+      "ts": 1795623120.71,
+      "problem": "835",
+      "phase": "R2-referee",
+      "model": "openai/gpt-5.6-luna-pro",
+      "in_tokens": 27050,
+      "out_tokens": 7590,
+      "cost_usd": 0.01287,
+      "cum_usd": 0.01287,
+      "elapsed_sec": 34.37
+    },
+    {
+      "ts": 1795623124.53,
+      "problem": "128",
+      "phase": "R2-referee",
+      "model": "openai/gpt-5.6-luna-pro",
+      "in_tokens": 19720,
+      "out_tokens": 8200,
+      "cost_usd": 0.01255,
+      "cum_usd": 0.02542,
+      "elapsed_sec": 37.23
+    },
+    {
+      "ts": 1795623125.73,
+      "problem": "552",
+      "phase": "R1-gemma4_31b",
+      "model": "google/gemma-4-31b-it:free",
+      "in_tokens": 1348,
+      "out_tokens": 1220,
+      "cost_usd": 0.00093,
+      "cum_usd": 0.02635,
+      "elapsed_sec": 4.71
+    },
+    {
+      "ts": 1795623133.02,
+      "problem": "628",
+      "phase": "R1-gemma4_31b",
+      "model": "google/gemma-4-31b-it:free",
+      "in_tokens": 1652,
+      "out_tokens": 2116,
+      "cost_usd": 0.00152,
+      "cum_usd": 0.02787,
+      "elapsed_sec": 8.12
+    },
+    {
+      "ts": 1795623201.75,
+      "problem": "552",
+      "phase": "R1-nemotron_550b",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "in_tokens": 1397,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.02787,
+      "elapsed_sec": 81.04
+    },
+    {
+      "ts": 1795623232.3,
+      "problem": "628",
+      "phase": "R1-nemotron_550b",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "in_tokens": 1745,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.02787,
+      "elapsed_sec": 107.76
+    },
+    {
+      "ts": 1795623258.7,
+      "problem": "552",
+      "phase": "R1-deepseek_v32",
+      "model": "deepseek/deepseek-v3.2",
+      "in_tokens": 1397,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.02787,
+      "elapsed_sec": 17.94
+    },
+    {
+      "ts": 1795623266.84,
+      "problem": "628",
+      "phase": "R1-deepseek_v32",
+      "model": "deepseek/deepseek-v3.2",
+      "in_tokens": 1745,
+      "out_tokens": 2300,
+      "cost_usd": 0.0,
+      "cum_usd": 0.02787,
+      "elapsed_sec": 22.25
+    },
+    {
+      "ts": 1795623293.27,
+      "problem": "552",
+      "phase": "R2-referee",
+      "model": "openai/gpt-5.6-luna-pro",
+      "in_tokens": 26441,
+      "out_tokens": 7279,
+      "cost_usd": 0.01219,
+      "cum_usd": 0.04006,
+      "elapsed_sec": 34.57
+    },
+    {
+      "ts": 1795623301.63,
+      "problem": "628",
+      "phase": "R2-referee",
+      "model": "openai/gpt-5.6-luna-pro",
+      "in_tokens": 26088,
+      "out_tokens": 8142,
+      "cost_usd": 0.01318,
+      "cum_usd": 0.05324,
+      "elapsed_sec": 34.79
+    }
+  ]
+}

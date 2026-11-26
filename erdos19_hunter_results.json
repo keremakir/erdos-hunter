@@ -1,0 +1,23 @@
+{
+  "n_13": {
+    "tested": 502,
+    "dsatur_hard": 0,
+    "milp_colorable": 0,
+    "milp_timeouts": 0,
+    "counterexamples": 0
+  },
+  "n_14": {
+    "tested": 200,
+    "dsatur_hard": 0,
+    "milp_colorable": 0,
+    "milp_timeouts": 0,
+    "counterexamples": 0
+  },
+  "n_15": {
+    "tested": 200,
+    "dsatur_hard": 0,
+    "milp_colorable": 0,
+    "milp_timeouts": 0,
+    "counterexamples": 0
+  }
+}

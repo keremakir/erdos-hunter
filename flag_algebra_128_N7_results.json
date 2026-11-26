@@ -1,0 +1,20 @@
+{
+  "N7_1v_only": {
+    "unconditional_c_star": 0.032266,
+    "slack_at_hi": -1.1698261083129423e-06,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.29782
+  },
+  "N7_psi_alpha_only": {
+    "unconditional_c_star": 0.028844,
+    "slack_at_hi": -1.0023807342122331e-06,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.2343
+  },
+  "N7_psi_alpha_plus_1v": {
+    "unconditional_c_star": 0.028822,
+    "slack_at_hi": -1.0103761506385015e-06,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.30552
+  }
+}

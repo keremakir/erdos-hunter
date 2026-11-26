@@ -1,0 +1,27 @@
+{
+  "1vertex_w_1": {
+    "c_star": 0.039435,
+    "status": "optimal",
+    "edge_density_at_opt": 0.32501
+  },
+  "1vertex_w_d": {
+    "c_star": 0.032428,
+    "status": "optimal_inaccurate",
+    "edge_density_at_opt": 0.31733
+  },
+  "1vertex_w_1-d": {
+    "c_star": 0.042203,
+    "status": "optimal_inaccurate",
+    "edge_density_at_opt": 0.33763
+  },
+  "1vertex_w_half-d": {
+    "c_star": 0.045,
+    "status": "optimal_inaccurate",
+    "edge_density_at_opt": 0.37737
+  },
+  "2nbr_with_delta": {
+    "c_star": 0.022765,
+    "status": "optimal_inaccurate",
+    "edge_density_at_opt": 0.36303
+  }
+}

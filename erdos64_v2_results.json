@@ -1,0 +1,98 @@
+[
+  {
+    "n": 30,
+    "d": 3,
+    "seed": 101,
+    "steps": 29193,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 30,
+    "d": 3,
+    "seed": 102,
+    "steps": 29271,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 36,
+    "d": 3,
+    "seed": 201,
+    "steps": 18500,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 36,
+    "d": 3,
+    "seed": 202,
+    "steps": 18571,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 42,
+    "d": 3,
+    "seed": 301,
+    "steps": 14061,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 42,
+    "d": 3,
+    "seed": 302,
+    "steps": 14389,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 48,
+    "d": 3,
+    "seed": 401,
+    "steps": 11585,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 48,
+    "d": 3,
+    "seed": 402,
+    "steps": 11602,
+    "c4": 0,
+    "c8": 0,
+    "c16": 10,
+    "c32": -1,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  }
+]

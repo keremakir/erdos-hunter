@@ -1,0 +1,27 @@
+{
+  "problem": "628",
+  "note": "falsifiable (0 claims) | Erdos-Lovasz Tihany Conjecture first open case (k=6, a=3, b=4)",
+  "round1_exec": {
+    "deepseek_v32": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "nemotron_550b": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "gemma4_31b": {
+      "ran": true,
+      "exit_code": 0,
+      "elapsed_sec": 1.19,
+      "stdout": "Graph nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nGraph edges: [(0, 1), (0, 4), (0, 5), (0, 7), (1, 2), (1, 6), (1, 8), (2, 3), (2, 7), (2, 9), (3, 4), (3, 8), (3, 5), (4, 9), (4, 6), (5, 6), (5, 9), (6, 7), (7, 8), (8, 9)]\nChromatic number: 3\nHas K6: False\nGraph does not meet criteria.\nNo counterexample found in this construction.\n",
+      "stderr": "",
+      "script": "C:\\Users\\Kerem\\.gemini\\antigravity\\scratch\\erdos-hunter\\swarm_runs\\20261125-190906\\problem_628\\code_r1_gemma4_31b.py"
+    }
+  },
+  "referee_exec": {
+    "ran": false,
+    "reason": "no_python_block"
+  },
+  "referee_verdict_preview": "## Audit\n\n### Lean specification\nThe Lean statement is the Erdős–Lovász–Tihany conjecture in its standard graph-theoretic form:\n\n- \\(\\chi(G)=k\\);\n- \\(G\\) is \\(K_k\\)-free;\n- \\(a,b\\ge 2\\) and \\(a+b=k+1\\);\n- find a vertex partition \\(V=s\\sqcup s^c\\) with\n  \\[\n  \\chi(G[s])\\ge a,\\qquad \\chi(G[s^c])\\ge b.\n  \\]\n\nThere is no `2 * |V'| + 1 >= n` issue in this specification: that inequality is unrelated to the Lean theorem. The complement \\(s^\\complement\\) is a vertex-set complement, so the two induced subgraphs are genuinely disjoint and cover \\(V\\).\n\nThe main unresolved instance is \\(k=6\\), \\((a,b)=(3,4)\\), up to exchanging the two parts.\n\n### Agent-output audit\n\n1. **DeepSeek**\n   - The process did not terminate:\n     ```\n     Exit Code: None | Time: Nones\n     ```\n   - There is therefore no computational result to credit.\n   - The text contains unfinished speculation and several uncertain claims about smallest triangle-free high-chromatic graphs. None was verified by the run.\n\n2. **Nemotron**\n   - Also did not terminate:\n     ```\n     Exit Code: None | Time: Nones\n     ```\n   - No mathematical or computational conclusion was established.\n\n3. **Gemma**\n   - The only completed run exited successfully in 1.19 seconds.\n   - It generated one 10-vertex graph and reported:\n     ```\n     Chromatic number: 3\n     Has K6: False\n     Graph does not meet criteria.\n     No counterexample found in this construction.\n     ```\n   - This is **not** a test of Erdős #628:\n     - The reported “chromatic number” is obtained from a greedy coloring upper bound, not an exact chromatic-number algorithm.\n     - The graph has reported chromatic number \\(3\\), not \\(6\\).\n     - It therefore does not satisfy the hypothesis \\(\\chi(G)=6\\).\n     - Testing one irrelevant graph cannot provide evidence against or for the conjecture.\n   - The shown script is also truncated in the supplied transcript and appears to use approximate coloring for induced subgraphs, which is unsound for deciding the theorem.\n\nThus the three runs established no new theorem, counterexample, exact small-\\(n\\) value, LP bound, or verified construction.\n\n## Strongest legitimate lead\n\nThe best computationally meaningful direction i"
+}

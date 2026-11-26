@@ -1,0 +1,23 @@
+{
+  "problem": "128",
+  "note": "$250 Prize | falsifiable | Triangle-free graph with dense >=n/2 induced subgraphs",
+  "round1_exec": {
+    "deepseek_v32": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "nemotron_550b": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "gemma4_31b": {
+      "ran": false,
+      "reason": "no_python_block"
+    }
+  },
+  "referee_exec": {
+    "ran": false,
+    "reason": "no_python_block"
+  },
+  "referee_verdict_preview": "## Audit\n\n### Quantifier/rounding issue\n\nThe Lean hypothesis is\n\n\\[\n2|V'|+1\\ge n.\n\\]\n\nFor integer \\(|V'|\\), this is equivalent to\n\n\\[\n|V'|\\ge \\left\\lfloor \\frac n2\\right\\rfloor.\n\\]\n\nThus:\n\n- \\(n=2m\\): subsets of size at least \\(m\\);\n- \\(n=2m+1\\): subsets of size at least \\(m\\), **not** \\(m+1\\).\n\nSo for odd \\(n\\), Lean formalizes a strictly stronger premise than the usual “at least \\(n/2\\)” interpreted as at least \\(\\lceil n/2\\rceil\\).\n\nAlso, because induced edge counts are monotone under adding vertices, it suffices to check subsets of exactly\n\n\\[\nk=\\lfloor n/2\\rfloor\n\\]\n\nvertices.\n\nThe strict inequality\n\n\\[\n50e(V')>n^2\n\\]\n\nmeans, over integer edge counts,\n\n\\[\ne(V')\\ge \\left\\lfloor\\frac{n^2}{50}\\right\\rfloor+1.\n\\]\n\n### Errors in the agent analyses\n\n- DeepSeek correctly began considering \\(K_{\\lfloor n/2\\rfloor,\\lceil n/2\\rceil}\\), but its apparent counterexample is invalid. A half-sized subset can lie entirely in one bipartition class and then induce **zero** edges.\n- Nemotron correctly detected the odd-\\(n\\) discrepancy.\n- Neither agent supplied a completed mathematical argument or a usable computational result.\n- Gemma returned an API error.\n\n### Actual execution results\n\nThere were no completed Python executions to audit:\n\n- DeepSeek: `Exit Code: None`, no stdout/stderr.\n- Nemotron: `Exit Code: None`, no stdout/stderr.\n- Gemma: API failure.\n\nTherefore, no exact small-\\(n\\) values, LP bounds, construction scores, or computational counterexamples were actually established.\n\n## Strongest lead\n\nThe best concrete lead is an exact finite feasibility formulation.\n\nFor fixed \\(n\\), introduce a binary variable \\(x_{ij}\\) for every possible edge. Impose:\n\n1. **Triangle-free constraints**\n   \\[\n   x_{ij}+x_{ik}+x_{jk}\\le 2\n   \\]\n   for every triple.\n\n2. **Dense-half-subset constraints**\n   \\[\n   \\sum_{\\{i,j\\}\\subseteq S}x_{ij}\n   \\ge \\left\\lfloor\\frac{n^2}{50}\\right\\rfloor+1\n   \\]\n   for every \\(S\\subseteq[n]\\) with \\(|S|=\\lfloor n/2\\rfloor\\).\n\nThis directly searches for a counterexample to the formal Lean statement. It avoids the invalid complete-bipartite argument and respects the exact odd-\\(n\\) quantifier.\n\nThe following script uses SciPy’s MILP solver, validates ev"
+}

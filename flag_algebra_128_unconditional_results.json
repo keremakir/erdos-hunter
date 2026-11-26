@@ -1,0 +1,26 @@
+{
+  "1v_all_weights_only": {
+    "unconditional_c_star": 0.032429,
+    "slack_at_hi": -1.0625932371618587e-07,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.29584
+  },
+  "2v_nonedge_only": {
+    "unconditional_c_star": 0.045,
+    "slack_at_hi": 0.004061191870538688,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.37994
+  },
+  "1v_plus_2v_nonedge": {
+    "unconditional_c_star": 0.032429,
+    "slack_at_hi": -1.0572913741291725e-07,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.29578
+  },
+  "1v_plus_2v_nonedge_and_edge": {
+    "unconditional_c_star": 0.032429,
+    "slack_at_hi": -1.0573480887337651e-07,
+    "status_at_hi": "optimal",
+    "edge_density_at_lo": 0.29578
+  }
+}

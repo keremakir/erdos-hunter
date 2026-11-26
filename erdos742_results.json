@@ -1,0 +1,74 @@
+[
+  {
+    "n": 25,
+    "target": 156,
+    "best_e": 144,
+    "best_nonbip_e": 135,
+    "restarts": 829,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 25,
+    "target": 156,
+    "best_e": 141,
+    "best_nonbip_e": 135,
+    "restarts": 869,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 25,
+    "target": 156,
+    "best_e": 117,
+    "best_nonbip_e": 117,
+    "restarts": 861,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 25,
+    "target": 156,
+    "best_e": 145,
+    "best_nonbip_e": 135,
+    "restarts": 869,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 27,
+    "target": 182,
+    "best_e": 136,
+    "best_nonbip_e": 130,
+    "restarts": 621,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 27,
+    "target": 182,
+    "best_e": 160,
+    "best_nonbip_e": 150,
+    "restarts": 614,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 28,
+    "target": 196,
+    "best_e": 161,
+    "best_nonbip_e": 161,
+    "restarts": 530,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  },
+  {
+    "n": 28,
+    "target": 196,
+    "best_e": 154,
+    "best_nonbip_e": 154,
+    "restarts": 537,
+    "COUNTEREXAMPLE": false,
+    "adj": null
+  }
+]

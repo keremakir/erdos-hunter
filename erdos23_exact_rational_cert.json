@@ -1,0 +1,11 @@
+{
+  "problem": "Erd\u0151s #23 (Bipartization / Max-Cut of Triangle-Free Graphs)",
+  "bound_fraction": "19/400",
+  "bound_decimal": 0.0475,
+  "one_over_c": 21.0526,
+  "c_star_1nbr": 0.06,
+  "c_star_2nbr": 0.047225,
+  "c_star_combined": 0.047225,
+  "exact_ldlt_all_pd": true,
+  "max_S_exact_float": -0.0003255845952380952
+}

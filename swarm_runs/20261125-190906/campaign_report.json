@@ -1,0 +1,102 @@
+[
+  {
+    "problem": "128",
+    "note": "$250 Prize | falsifiable | Triangle-free graph with dense >=n/2 induced subgraphs",
+    "round1_exec": {
+      "deepseek_v32": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "nemotron_550b": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "gemma4_31b": {
+        "ran": false,
+        "reason": "no_python_block"
+      }
+    },
+    "referee_exec": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "referee_verdict_preview": "## Audit\n\n### Quantifier/rounding issue\n\nThe Lean hypothesis is\n\n\\[\n2|V'|+1\\ge n.\n\\]\n\nFor integer \\(|V'|\\), this is equivalent to\n\n\\[\n|V'|\\ge \\left\\lfloor \\frac n2\\right\\rfloor.\n\\]\n\nThus:\n\n- \\(n=2m\\): subsets of size at least \\(m\\);\n- \\(n=2m+1\\): subsets of size at least \\(m\\), **not** \\(m+1\\).\n\nSo for odd \\(n\\), Lean formalizes a strictly stronger premise than the usual “at least \\(n/2\\)” interpreted as at least \\(\\lceil n/2\\rceil\\).\n\nAlso, because induced edge counts are monotone under adding vertices, it suffices to check subsets of exactly\n\n\\[\nk=\\lfloor n/2\\rfloor\n\\]\n\nvertices.\n\nThe strict inequality\n\n\\[\n50e(V')>n^2\n\\]\n\nmeans, over integer edge counts,\n\n\\[\ne(V')\\ge \\left\\lfloor\\frac{n^2}{50}\\right\\rfloor+1.\n\\]\n\n### Errors in the agent analyses\n\n- DeepSeek correctly began considering \\(K_{\\lfloor n/2\\rfloor,\\lceil n/2\\rceil}\\), but its apparent counterexample is invalid. A half-sized subset can lie entirely in one bipartition class and then induce **zero** edges.\n- Nemotron correctly detected the odd-\\(n\\) discrepancy.\n- Neither agent supplied a completed mathematical argument or a usable computational result.\n- Gemma returned an API error.\n\n### Actual execution results\n\nThere were no completed Python executions to audit:\n\n- DeepSeek: `Exit Code: None`, no stdout/stderr.\n- Nemotron: `Exit Code: None`, no stdout/stderr.\n- Gemma: API failure.\n\nTherefore, no exact small-\\(n\\) values, LP bounds, construction scores, or computational counterexamples were actually established.\n\n## Strongest lead\n\nThe best concrete lead is an exact finite feasibility formulation.\n\nFor fixed \\(n\\), introduce a binary variable \\(x_{ij}\\) for every possible edge. Impose:\n\n1. **Triangle-free constraints**\n   \\[\n   x_{ij}+x_{ik}+x_{jk}\\le 2\n   \\]\n   for every triple.\n\n2. **Dense-half-subset constraints**\n   \\[\n   \\sum_{\\{i,j\\}\\subseteq S}x_{ij}\n   \\ge \\left\\lfloor\\frac{n^2}{50}\\right\\rfloor+1\n   \\]\n   for every \\(S\\subseteq[n]\\) with \\(|S|=\\lfloor n/2\\rfloor\\).\n\nThis directly searches for a counterexample to the formal Lean statement. It avoids the invalid complete-bipartite argument and respects the exact odd-\\(n\\) quantifier.\n\nThe following script uses SciPy’s MILP solver, validates ev"
+  },
+  {
+    "problem": "552",
+    "note": "$100 Prize | open (0 claims) | C4-Star Ramsey number R(C4, S_n) <= n + sqrt(n) - c",
+    "round1_exec": {
+      "deepseek_v32": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "nemotron_550b": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "gemma4_31b": {
+        "ran": true,
+        "exit_code": 0,
+        "elapsed_sec": 1.52,
+        "stdout": "Checking up to n=20, with c=0.5\nValid cases: 0\nViolations (n, f(n), bound):\n(1, 4, 1.5)\n(2, 5, 2.914213562373095)\n(3, 6, 4.232050807568877)\n(4, 7, 5.5)\n(5, 8, 6.73606797749979)\n(6, 9, 7.949489742783179)\n(7, 10, 9.14575131106459)\n(8, 11, 10.32842712474619)\n(9, 12, 11.5)\n(10, 13, 12.66227766016838)\n",
+        "stderr": "",
+        "script": "C:\\Users\\Kerem\\.gemini\\antigravity\\scratch\\erdos-hunter\\swarm_runs\\20261125-190906\\problem_552\\code_r1_gemma4_31b.py"
+      }
+    },
+    "referee_exec": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "referee_verdict_preview": "**Analyzing graph computations**\n\nI need to produce audit facts and a script to understand the exact computations. The goal is to craft an upgraded experiment with a time limit of 22 seconds. I'm considering the relationship between C4-free graphs and their maximum degree. It seems like I should derive Ramsey numbers, focusing on avoiding specific colorings that reflect red C4 and blue stars. Then, I need to explore possible constructions and consider using tools like SAT/CP or SciPy’s MILP to search for solutions. It also might help to analyze graph complements.**Exploring C4 subgraphs**\n\nI need to define C4 subgraphs, which involve selecting 4 vertices and ensuring their corresponding edges have a sum not exceeding 3. My aim is to establish a minimum degree of at least N-n. I think using binary MILP could help find the maximum feasible N for a range of n values. The computational discovery seems valid if I can confirm the solver's status. I should consider using SciPy's MILP. There are many instances to process, and I want to create a single script that efficiently handles this.**Determining graph feasibility**\n\nThe script should confirm whether the graph is feasible and determine an upper bound. For this, I'll need to ensure the MILP feasibility returns valid results and avoid any incorrect C4 encodings. A graph only contains C4 if all edges within the selected 4 vertices are present; diagonals aren't relevant here. I could also explore using random greedy or simulated annealing methods instead of strictly MILP. The key focus should be on achieving a C4-free graph with a minimum degree of N-n."
+  },
+  {
+    "problem": "628",
+    "note": "falsifiable (0 claims) | Erdos-Lovasz Tihany Conjecture first open case (k=6, a=3, b=4)",
+    "round1_exec": {
+      "deepseek_v32": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "nemotron_550b": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "gemma4_31b": {
+        "ran": true,
+        "exit_code": 0,
+        "elapsed_sec": 1.19,
+        "stdout": "Graph nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nGraph edges: [(0, 1), (0, 4), (0, 5), (0, 7), (1, 2), (1, 6), (1, 8), (2, 3), (2, 7), (2, 9), (3, 4), (3, 8), (3, 5), (4, 9), (4, 6), (5, 6), (5, 9), (6, 7), (7, 8), (8, 9)]\nChromatic number: 3\nHas K6: False\nGraph does not meet criteria.\nNo counterexample found in this construction.\n",
+        "stderr": "",
+        "script": "C:\\Users\\Kerem\\.gemini\\antigravity\\scratch\\erdos-hunter\\swarm_runs\\20261125-190906\\problem_628\\code_r1_gemma4_31b.py"
+      }
+    },
+    "referee_exec": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "referee_verdict_preview": "## Audit\n\n### Lean specification\nThe Lean statement is the Erdős–Lovász–Tihany conjecture in its standard graph-theoretic form:\n\n- \\(\\chi(G)=k\\);\n- \\(G\\) is \\(K_k\\)-free;\n- \\(a,b\\ge 2\\) and \\(a+b=k+1\\);\n- find a vertex partition \\(V=s\\sqcup s^c\\) with\n  \\[\n  \\chi(G[s])\\ge a,\\qquad \\chi(G[s^c])\\ge b.\n  \\]\n\nThere is no `2 * |V'| + 1 >= n` issue in this specification: that inequality is unrelated to the Lean theorem. The complement \\(s^\\complement\\) is a vertex-set complement, so the two induced subgraphs are genuinely disjoint and cover \\(V\\).\n\nThe main unresolved instance is \\(k=6\\), \\((a,b)=(3,4)\\), up to exchanging the two parts.\n\n### Agent-output audit\n\n1. **DeepSeek**\n   - The process did not terminate:\n     ```\n     Exit Code: None | Time: Nones\n     ```\n   - There is therefore no computational result to credit.\n   - The text contains unfinished speculation and several uncertain claims about smallest triangle-free high-chromatic graphs. None was verified by the run.\n\n2. **Nemotron**\n   - Also did not terminate:\n     ```\n     Exit Code: None | Time: Nones\n     ```\n   - No mathematical or computational conclusion was established.\n\n3. **Gemma**\n   - The only completed run exited successfully in 1.19 seconds.\n   - It generated one 10-vertex graph and reported:\n     ```\n     Chromatic number: 3\n     Has K6: False\n     Graph does not meet criteria.\n     No counterexample found in this construction.\n     ```\n   - This is **not** a test of Erdős #628:\n     - The reported “chromatic number” is obtained from a greedy coloring upper bound, not an exact chromatic-number algorithm.\n     - The graph has reported chromatic number \\(3\\), not \\(6\\).\n     - It therefore does not satisfy the hypothesis \\(\\chi(G)=6\\).\n     - Testing one irrelevant graph cannot provide evidence against or for the conjecture.\n   - The shown script is also truncated in the supplied transcript and appears to use approximate coloring for induced subgraphs, which is unsound for deciding the theorem.\n\nThus the three runs established no new theorem, counterexample, exact small-\\(n\\) value, LP bound, or verified construction.\n\n## Strongest legitimate lead\n\nThe best computationally meaningful direction i"
+  },
+  {
+    "problem": "835",
+    "note": "verifiable | Johnson graph chromatic number J(2k,k)=k+1, k=10 next open frontier!",
+    "round1_exec": {
+      "deepseek_v32": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "nemotron_550b": {
+        "ran": false,
+        "reason": "no_python_block"
+      },
+      "gemma4_31b": {
+        "ran": false,
+        "reason": "no_python_block"
+      }
+    },
+    "referee_exec": {
+      "ran": false,
+      "reason": "no_python_block"
+    },
+    "referee_verdict_preview": "## Audit verdict\n\nAll three computational attacks failed to produce usable computational evidence:\n\n- **DeepSeek:** `Exit Code: None`, no stdout, no stderr.\n- **Nemotron:** `Exit Code: None`, no stdout, no stderr.\n- **Gemma:** API failure.\n\nThus they proved or discovered **nothing computationally**. In particular, their repeated claim that \\(k=10\\) is the “smallest open case” was not verified—and is in fact falsified by the Johnson-bound calculation below.\n\n### Main mathematical error\n\nBoth substantive agents misidentified \\(k=10\\) as an open frontier. Applying the exact `johnsonBound` from the Lean file gives\n\n\\[\n\\operatorname{johnsonBound}(20,4,10)=15920.\n\\]\n\nSince\n\n\\[\n\\binom{20}{10}=184756,\n\\qquad\n\\left\\lceil\\frac{184756}{15920}\\right\\rceil=12,\n\\]\n\nthe formal lower-bound lemma implies\n\n\\[\n\\chi(J(20,10))\\ge 12>11=k+1.\n\\]\n\nTherefore `Property 10` is false. No coloring search is needed for \\(k=10\\).\n\nFor comparison, \\(k=12\\) gives\n\n\\[\n\\operatorname{johnsonBound}(24,4,12)=208012,\n\\]\n\nand\n\n\\[\n\\binom{24}{12}=2704156=13\\cdot208012,\n\\]\n\nso the Johnson bound gives only\n\n\\[\n\\chi(J(24,12"
+  }
+]
